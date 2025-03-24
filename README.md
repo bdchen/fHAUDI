@@ -1,7 +1,7 @@
 # fHAUDI
 
 ## Introduction
-fHAUDI extends [HAUDI] (https://github.com/frankp-0/HAUDI) to incorporate functional annotations into a local ancestry-informed PRS. fHAUDI uses annotation-specific penalties to prioritize more annotated variants, which are more likely to be causal.
+fHAUDI extends [HAUDI](https://github.com/frankp-0/HAUDI) to incorporate functional annotations into a local ancestry-informed PRS. fHAUDI uses annotation-specific penalties to prioritize more annotated variants, which are more likely to be causal.
 
 ## Installation
 
@@ -54,4 +54,18 @@ and `write.table(fbm_result$info, file="target_info.txt")`
 
 ## Run fHAUDI
 
-To run fHAUDI, simply use the function `fHAUDI`. An example is provided below
+To run fHAUDI, simply use the function `fHAUDI`. An example is provided below with 3 annotations
+
+```{r}
+fhaudi_model <- fhaudi(
+  fbm_obj = fbm_result$FBM,
+  fbm_anno_info = fbm_info_with_annotation_data,
+  y = y,
+  gamma_anno_s = c(2,1,2,2),
+  ind_train = NULL,
+  family = "gaussian",
+  snps = NULL,
+  K = 10
+)
+```
+
