@@ -6,7 +6,7 @@ fHAUDI extends [HAUDI](https://github.com/frankp-0/HAUDI) to incorporate functio
 ## Installation
 
 ```{r}
-remotes::install_github("frankp-0/HAUDI")
+remotes::install_github("bdchen/fHAUDI")
 ```
 
 ## File Preparation
